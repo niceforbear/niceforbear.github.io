@@ -92,7 +92,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="有意思的技术专栏">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="有意思的技术专栏">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有意思的技术专栏">
@@ -123,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title>归档 | 有意思的技术专栏</title>
+  <title>有意思的技术专栏</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -155,7 +155,9 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,107 +240,157 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 3 篇日志。 继续努力。
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/31/ml-week1-1-introduction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nicefo72">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有意思的技术专栏">
     </span>
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/31/ml-week1-1-introduction/" itemprop="url">CourseraML笔记W1 | 介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T14:10:19+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
       
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-            <a class="post-title-link" href="/2017/05/31/ml-week1-3-parameter-learning/" itemprop="url">
-              
-                <span itemprop="name">CourseraML笔记W1 | Parameter Learning</span>
-              
-            </a>
+          
+            <h1 id="What-is-machine-learning"><a href="#What-is-machine-learning" class="headerlink" title="What is machine learning?"></a>What is machine learning?</h1><p>Field of study that gives computers the ability to learn without being explicitly programmed. – Arthur Samuel(1959)</p>
+<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E. – Tom Mitchell</p>
+<p>Example: playing checkers.</p>
+<p>E = the experience of playing many games of checkers</p>
+<p>T = the task of playing checkers.</p>
+<p>P = the probability that the program will win the next game.</p>
+<h1 id="Machine-learning-algorithms"><a href="#Machine-learning-algorithms" class="headerlink" title="Machine learning algorithms:"></a>Machine learning algorithms:</h1><ul>
+<li>Supervised learning</li>
+<li>Unsupervised learning</li>
+</ul>
+<p>Others: Reinforcement learning, recommender systems.</p>
+<p>Practical advice for applying learning algorithms.</p>
+<h1 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h1><h4 id="Demo-Housing-price-prediction"><a href="#Demo-Housing-price-prediction" class="headerlink" title="Demo: Housing price prediction"></a>Demo: Housing price prediction</h4><p>Supervised Learning: “right answers” given</p>
+<p>Regression: Predict continuous valued output(price)</p>
+<h4 id="Another-demo-Breast-cancer-malignant-benign"><a href="#Another-demo-Breast-cancer-malignant-benign" class="headerlink" title="Another demo: Breast cancer(malignant, benign)"></a>Another demo: Breast cancer(malignant, benign)</h4><p>Classification: Discrete valued output(0 or 1)</p>
+<hr>
+<p>Supervised Learning</p>
+<p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
+<p>Supervised learning problems are categorized into “regression” and “classification” problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
+<p>Example 1:</p>
+<p>Given data about the size of houses on the real estate market, try to predict their price. Price as a function of size is a continuous output, so this is a regression problem.</p>
+<p>We could turn this example into a classification problem by instead making our output about whether the house “sells for more or less than the asking price.” Here we are classifying the houses based on price into two discrete categories.</p>
+<p>Example 2:</p>
+<p>(a) Regression - Given a picture of a person, we have to predict their age on the basis of the given picture</p>
+<p>(b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.</p>
+<hr>
+<h1 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h1><p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
+<p>We can derive this structure by clustering the data based on relationships among the variables in the data.</p>
+<p>With unsupervised learning there is no feedback based on the prediction results.</p>
+<p>Example:</p>
+<p>Clustering: Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.</p>
+<p>Non-clustering: The “Cocktail Party Algorithm”, allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).</p>
+
+          
         
-      </h2>
+      
+    </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-31T16:21:55+08:00"
-              content="2017-05-31" >
-          05-31
-        </time>
-      </div>
+    <div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
   </article>
 
 
-
     
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/05/31/ml-week1-2-model-and-cost-function/" itemprop="url">
-              
-                <span itemprop="name">CourseraML笔记W1 | Model and Cost function</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-05-31T15:30:38+08:00"
-              content="2017-05-31" >
-          05-31
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
-
 
 
 
@@ -540,12 +592,6 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
-
 
   
 
