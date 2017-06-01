@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/31/ml-week1-1-introduction/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week2-octave/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nicefo72">
@@ -270,7 +270,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/31/ml-week1-1-introduction/" itemprop="url">CourseraML笔记W1 | 介绍</a></h1>
+                <a class="post-title-link" href="/2017/06/01/ml-week2-octave/" itemprop="url">CourseraML笔记W2 | Octave使用</a></h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T14:10:19+08:00">
-                2017-05-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T10:55:31+08:00">
+                2017-06-01
               </time>
             
 
@@ -319,38 +319,129 @@
       
         
           
-            <h1 id="What-is-machine-learning"><a href="#What-is-machine-learning" class="headerlink" title="What is machine learning?"></a>What is machine learning?</h1><p>Field of study that gives computers the ability to learn without being explicitly programmed. – Arthur Samuel(1959)</p>
-<p>A computer program is said to learn from experience E with respect to some task T and some performance measure P, if its performance on T, as measured by P, improves with experience E. – Tom Mitchell</p>
-<p>Example: playing checkers.</p>
-<p>E = the experience of playing many games of checkers</p>
-<p>T = the task of playing checkers.</p>
-<p>P = the probability that the program will win the next game.</p>
-<h1 id="Machine-learning-algorithms"><a href="#Machine-learning-algorithms" class="headerlink" title="Machine learning algorithms:"></a>Machine learning algorithms:</h1><ul>
-<li>Supervised learning</li>
-<li>Unsupervised learning</li>
+            <h1 id="Octave"><a href="#Octave" class="headerlink" title="Octave"></a>Octave</h1>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week2-2-computing-parameters-analytically-2-normal-equation-noninvertibility/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nicefo72">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有意思的技术专栏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/ml-week2-2-computing-parameters-analytically-2-normal-equation-noninvertibility/" itemprop="url">CourseraML笔记W2 | 正规方程的不可逆性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T10:42:44+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Normal-Equation-Noninvertibility-正规方程的不可逆性"><a href="#Normal-Equation-Noninvertibility-正规方程的不可逆性" class="headerlink" title="Normal Equation Noninvertibility 正规方程的不可逆性"></a>Normal Equation Noninvertibility 正规方程的不可逆性</h1><p>What if X^T*X is non-invertible?</p>
+<blockquote>
+<p>Octave: pinv(X` <em> X) </em> X` * y</p>
+</blockquote>
+<hr>
+<p>When implementing the normal equation in octave we want to use the ‘pinv’ function rather than ‘inv.’ The ‘pinv’ function will give you a value of θ even if XTX is not invertible.</p>
+<p>If XTX is noninvertible, the common causes might be having :</p>
+<ul>
+<li>Redundant features, where two features are very closely related (i.e. they are linearly dependent)</li>
+<li>Too many features (e.g. m ≤ n). In this case, delete some features or use “regularization” (to be explained in a later lesson).</li>
 </ul>
-<p>Others: Reinforcement learning, recommender systems.</p>
-<p>Practical advice for applying learning algorithms.</p>
-<h1 id="Supervised-Learning"><a href="#Supervised-Learning" class="headerlink" title="Supervised Learning"></a>Supervised Learning</h1><h4 id="Demo-Housing-price-prediction"><a href="#Demo-Housing-price-prediction" class="headerlink" title="Demo: Housing price prediction"></a>Demo: Housing price prediction</h4><p>Supervised Learning: “right answers” given</p>
-<p>Regression: Predict continuous valued output(price)</p>
-<h4 id="Another-demo-Breast-cancer-malignant-benign"><a href="#Another-demo-Breast-cancer-malignant-benign" class="headerlink" title="Another demo: Breast cancer(malignant, benign)"></a>Another demo: Breast cancer(malignant, benign)</h4><p>Classification: Discrete valued output(0 or 1)</p>
-<hr>
-<p>Supervised Learning</p>
-<p>In supervised learning, we are given a data set and already know what our correct output should look like, having the idea that there is a relationship between the input and the output.</p>
-<p>Supervised learning problems are categorized into “regression” and “classification” problems. In a regression problem, we are trying to predict results within a continuous output, meaning that we are trying to map input variables to some continuous function. In a classification problem, we are instead trying to predict results in a discrete output. In other words, we are trying to map input variables into discrete categories.</p>
-<p>Example 1:</p>
-<p>Given data about the size of houses on the real estate market, try to predict their price. Price as a function of size is a continuous output, so this is a regression problem.</p>
-<p>We could turn this example into a classification problem by instead making our output about whether the house “sells for more or less than the asking price.” Here we are classifying the houses based on price into two discrete categories.</p>
-<p>Example 2:</p>
-<p>(a) Regression - Given a picture of a person, we have to predict their age on the basis of the given picture</p>
-<p>(b) Classification - Given a patient with a tumor, we have to predict whether the tumor is malignant or benign.</p>
-<hr>
-<h1 id="Unsupervised-Learning"><a href="#Unsupervised-Learning" class="headerlink" title="Unsupervised Learning"></a>Unsupervised Learning</h1><p>Unsupervised learning allows us to approach problems with little or no idea what our results should look like. We can derive structure from data where we don’t necessarily know the effect of the variables.</p>
-<p>We can derive this structure by clustering the data based on relationships among the variables in the data.</p>
-<p>With unsupervised learning there is no feedback based on the prediction results.</p>
-<p>Example:</p>
-<p>Clustering: Take a collection of 1,000,000 different genes, and find a way to automatically group these genes into groups that are somehow similar or related by different variables, such as lifespan, location, roles, and so on.</p>
-<p>Non-clustering: The “Cocktail Party Algorithm”, allows you to find structure in a chaotic environment. (i.e. identifying individual voices and music from a mesh of sounds at a cocktail party).</p>
+<p>Solutions to the above problems include deleting a feature that is linearly dependent with another or deleting one or more features when there are too many features.</p>
 
           
         
@@ -389,7 +480,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -434,7 +525,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

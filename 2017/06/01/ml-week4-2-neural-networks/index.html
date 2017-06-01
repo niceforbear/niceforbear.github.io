@@ -90,12 +90,29 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="有意思的技术专栏">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Model representation INeuron in the brain. Neuron model: Logistic unit 逻辑单元  input units -&amp;gt; output: h(x) = 1 / 1+ e^-(θ^Tx) bias unit: x0 激励函数： sigmoid(logistic) activation function g(z) = 1 / (1+e">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CourseraML笔记W4 | Neural Networks Representation">
+<meta property="og:url" content="http://yoursite.com/2017/06/01/ml-week4-2-neural-networks/index.html">
 <meta property="og:site_name" content="有意思的技术专栏">
+<meta property="og:description" content="Model representation INeuron in the brain. Neuron model: Logistic unit 逻辑单元  input units -&amp;gt; output: h(x) = 1 / 1+ e^-(θ^Tx) bias unit: x0 激励函数： sigmoid(logistic) activation function g(z) = 1 / (1+e">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.1.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.2.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.3.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.4.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.5.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.6.png">
+<meta property="og:image" content="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/0rgjYLDeEeajLxLfjQiSjg_0c07c56839f8d6e8d7b0d09acedc88fd_Screenshot-2016-11-22-10.08.51.png?expiry=1496448000000&hmac=mDE3KdUNDBrXr_lewGMnOXi0Ac7s8cZt2j6-1gLxp38">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.7.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.8.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.9.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.10.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.11.png">
+<meta property="og:updated_time" content="2017-06-01T15:25:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="有意思的技术专栏">
+<meta name="twitter:title" content="CourseraML笔记W4 | Neural Networks Representation">
+<meta name="twitter:description" content="Model representation INeuron in the brain. Neuron model: Logistic unit 逻辑单元  input units -&amp;gt; output: h(x) = 1 / 1+ e^-(θ^Tx) bias unit: x0 激励函数： sigmoid(logistic) activation function g(z) = 1 / (1+e">
+<meta name="twitter:image" content="http://niceforbear.github.io/images/w4.1.png">
 
 
 
@@ -123,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/01/ml-week4-2-neural-networks/"/>
 
 
 
 
 
-  <title>有意思的技术专栏</title>
+  <title>CourseraML笔记W4 | Neural Networks Representation | 有意思的技术专栏</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -155,9 +172,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -240,9 +255,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -268,9 +283,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/ml-week4-2-neural-networks/" itemprop="url">CourseraML笔记W4 | Neural Networks Representation</a></h1>
+          <h1 class="post-title" itemprop="name headline">CourseraML笔记W4 | Neural Networks Representation</h1>
         
 
         <div class="post-meta">
@@ -317,9 +330,7 @@
       
 
       
-        
-          
-            <h1 id="Model-representation-I"><a href="#Model-representation-I" class="headerlink" title="Model representation I"></a>Model representation I</h1><p>Neuron in the brain.</p>
+        <h1 id="Model-representation-I"><a href="#Model-representation-I" class="headerlink" title="Model representation I"></a>Model representation I</h1><p>Neuron in the brain.</p>
 <p>Neuron model: Logistic unit 逻辑单元</p>
 <p><img src="http://niceforbear.github.io/images/w4.1.png" alt=""></p>
 <p>input units -&gt; output: h(x) = 1 / 1+ e^-(θ^Tx)</p>
@@ -378,20 +389,27 @@
 <p>hΘ(x)=a(j+1)=g(z(j+1))</p>
 <p>Notice that in this last step, between layer j and layer j+1, we are doing exactly the same thing as we did in logistic regression. Adding all these intermediate layers in neural networks allows us to more elegantly produce interesting and more complex non-linear hypotheses.</p>
 
-          
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
@@ -399,138 +417,38 @@
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week4-1-neural-networks-motivations/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="nicefo72">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="有意思的技术专栏">
-    </span>
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/01/ml-week4-1-neural-networks-motivations/" itemprop="url">CourseraML笔记W4 | 神经网络的动机</a></h1>
-        
+      
 
-        <div class="post-meta">
-          <span class="post-time">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T14:13:58+08:00">
-                2017-06-01
-              </time>
+              <a href="/2017/06/01/ml-week4-1-neural-networks-motivations/" rel="next" title="CourseraML笔记W4 | 神经网络的动机">
+                <i class="fa fa-chevron-left"></i> CourseraML笔记W4 | 神经网络的动机
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <h1 id="Non-linear-hypotheses"><a href="#Non-linear-hypotheses" class="headerlink" title="Non-linear hypotheses"></a>Non-linear hypotheses</h1><p>线性模型不可能覆盖所有的特征组合情况。</p>
-<p>因此需要非线性分类器：Non-linear Classification</p>
-<h1 id="Neurons-and-the-brain"><a href="#Neurons-and-the-brain" class="headerlink" title="Neurons and the brain"></a>Neurons and the brain</h1>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -538,6 +456,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -557,8 +479,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg"
@@ -611,6 +542,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Model-representation-I"><span class="nav-number">1.</span> <span class="nav-text">Model representation I</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model-representation-II"><span class="nav-number">2.</span> <span class="nav-text">Model representation II</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Forward-propagation-Vectorized-implementation"><span class="nav-number">2.0.0.1.</span> <span class="nav-text">Forward propagation: Vectorized implementation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Neural-Network-Learning-its-own-features"><span class="nav-number">2.0.0.2.</span> <span class="nav-text">Neural Network Learning its own features</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -731,6 +678,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
 
   
 
