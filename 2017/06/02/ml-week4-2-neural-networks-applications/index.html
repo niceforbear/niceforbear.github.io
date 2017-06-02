@@ -1,0 +1,739 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="niceforbear" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="Examples and intuitions INon-linear classification example: XOR / XNORExample:  AND function h(x1, x2) = g(-30 + 20x1 + 20x2)  OR function  h(x1, x2) = g(-10 + 20x1 + 20x2)  g: 激励函数   A simple example">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CourseraML笔记W4 | Applications">
+<meta property="og:url" content="http://yoursite.com/2017/06/02/ml-week4-2-neural-networks-applications/index.html">
+<meta property="og:site_name" content="有意思的技术专栏">
+<meta property="og:description" content="Examples and intuitions INon-linear classification example: XOR / XNORExample:  AND function h(x1, x2) = g(-30 + 20x1 + 20x2)  OR function  h(x1, x2) = g(-10 + 20x1 + 20x2)  g: 激励函数   A simple example">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.21.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.22.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.23.png">
+<meta property="og:image" content="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/f_ueJLGnEea3qApInhZCFg_a5ff8edc62c9a09900eae075e8502e34_Screenshot-2016-11-23-10.03.48.png?expiry=1496534400000&hmac=UcsfabpseZnm1C2zoQeXSrTdI5k2bi3eeH490qHEn9o">
+<meta property="og:image" content="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/wMOiMrGnEeajLxLfjQiSjg_bbbdad80f5c95068bde7c9134babdd77_Screenshot-2016-11-23-10.07.24.png?expiry=1496534400000&hmac=UPawp-IMPLRVxWxhY4IQD2TJqDtgpdGE_ZWBbKciFoY">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.24.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.25.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.26.png">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.27.png">
+<meta property="og:image" content="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/rag_zbGqEeaSmhJaoV5QvA_52c04a987dcb692da8979a2198f3d8d7_Screenshot-2016-11-23-10.28.41.png?expiry=1496534400000&hmac=AGg6o6_gvb4SoFHNEUbUWOBFQnhNERUjMRbA7mGIAmk">
+<meta property="og:image" content="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/9Aeo6bGtEea4MxKdJPaTxA_4febc7ec9ac9dd0e4309bd1778171d36_Screenshot-2016-11-23-10.49.05.png?expiry=1496534400000&hmac=quBzbsxK43iVTeZ7Kx4F9mag9nFndH0fvZfE2tYmgqY">
+<meta property="og:image" content="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/KBpHLXqiEealOA67wFuqoQ_95654ff11df1261d935ab00553d724e5_Screenshot-2016-09-14-10.38.27.png?expiry=1496534400000&hmac=hxkc-NTBC7zD7N55tylMkqLYifgYMNsoHfHtZd-6Hko">
+<meta property="og:image" content="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/VBxpV7GvEeamBAoLccicqA_3e7f67888330b131426ecffd27936f61_Screenshot-2016-11-23-10.59.19.png?expiry=1496534400000&hmac=2yS8aaGzh6rh2E_-1nACFsNla53Kz0bBgHGRYUqmITc">
+<meta property="og:image" content="http://niceforbear.github.io/images/w4.28.png">
+<meta property="og:updated_time" content="2017-06-02T08:07:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CourseraML笔记W4 | Applications">
+<meta name="twitter:description" content="Examples and intuitions INon-linear classification example: XOR / XNORExample:  AND function h(x1, x2) = g(-30 + 20x1 + 20x2)  OR function  h(x1, x2) = g(-10 + 20x1 + 20x2)  g: 激励函数   A simple example">
+<meta name="twitter:image" content="http://niceforbear.github.io/images/w4.21.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/02/ml-week4-2-neural-networks-applications/"/>
+
+
+
+
+
+  <title>CourseraML笔记W4 | Applications | 有意思的技术专栏</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">有意思的技术专栏</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/02/ml-week4-2-neural-networks-applications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nicefo72">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有意思的技术专栏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CourseraML笔记W4 | Applications</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T15:28:23+08:00">
+                2017-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Examples-and-intuitions-I"><a href="#Examples-and-intuitions-I" class="headerlink" title="Examples and intuitions I"></a>Examples and intuitions I</h1><h2 id="Non-linear-classification-example-XOR-XNOR"><a href="#Non-linear-classification-example-XOR-XNOR" class="headerlink" title="Non-linear classification example: XOR / XNOR"></a>Non-linear classification example: XOR / XNOR</h2><p>Example: </p>
+<p>AND function</p>
+<p>h(x1, x2) = g(-30 + 20<em>x1 + 20</em>x2)</p>
+<ul>
+<li>OR function</li>
+</ul>
+<p>h(x1, x2) = g(-10 + 20<em>x1 + 20</em>x2)</p>
+<blockquote>
+<p>g: 激励函数</p>
+</blockquote>
+<hr>
+<p>A simple example of applying neural networks is by predicting x1 AND x2, which is the logical ‘and’ operator and is only true if both x1 and x2 are 1.</p>
+<p>The graph of our functions will look like:</p>
+<p><img src="http://niceforbear.github.io/images/w4.21.png" alt=""></p>
+<p>Remember that x0 is our bias variable and is always 1.</p>
+<p>Let’s set our first theta matrix as:</p>
+<p><img src="http://niceforbear.github.io/images/w4.22.png" alt=""></p>
+<p>This will cause the output of our hypothesis to only be positive if both x1 and x2 are 1. In other words:</p>
+<p><img src="http://niceforbear.github.io/images/w4.23.png" alt=""></p>
+<p>So we have constructed one of the fundamental operations in computers by using a small neural network rather than using an actual AND gate. Neural networks can also be used to simulate all the other logical gates. The following is an example of the logical operator ‘OR’, meaning either x1 is true or x2 is true, or both:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/f_ueJLGnEea3qApInhZCFg_a5ff8edc62c9a09900eae075e8502e34_Screenshot-2016-11-23-10.03.48.png?expiry=1496534400000&amp;hmac=UcsfabpseZnm1C2zoQeXSrTdI5k2bi3eeH490qHEn9o" alt=""></p>
+<p>Where g(z) is the following:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/wMOiMrGnEeajLxLfjQiSjg_bbbdad80f5c95068bde7c9134babdd77_Screenshot-2016-11-23-10.07.24.png?expiry=1496534400000&amp;hmac=UPawp-IMPLRVxWxhY4IQD2TJqDtgpdGE_ZWBbKciFoY" alt=""></p>
+<hr>
+<h1 id="Intuitions-II"><a href="#Intuitions-II" class="headerlink" title="Intuitions II"></a>Intuitions II</h1><p>NOT x1:</p>
+<p>h(x) = g(10 - 20*x1)</p>
+<p>x1 XNOR x2:</p>
+<hr>
+<p>The Θ(1) matrices for AND, NOR, and OR are:</p>
+<p><img src="http://niceforbear.github.io/images/w4.24.png" alt=""></p>
+<p>We can combine these to get the XNOR logical operator (which gives 1 if x1 and x2 are both 0 or both 1).</p>
+<p><img src="http://niceforbear.github.io/images/w4.25.png" alt=""></p>
+<p>For the transition between the first and second layer, we’ll use a Θ(1) matrix that combines the values for AND and NOR:</p>
+<p><img src="http://niceforbear.github.io/images/w4.26.png" alt=""></p>
+<p>Let’s write out the values for all our nodes:</p>
+<p><img src="http://niceforbear.github.io/images/w4.27.png" alt=""></p>
+<p>And there we have the XNOR operator using a hidden layer with two nodes! The following summarizes the above algorithm:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/rag_zbGqEeaSmhJaoV5QvA_52c04a987dcb692da8979a2198f3d8d7_Screenshot-2016-11-23-10.28.41.png?expiry=1496534400000&amp;hmac=AGg6o6_gvb4SoFHNEUbUWOBFQnhNERUjMRbA7mGIAmk" alt=""></p>
+<hr>
+<h1 id="Multi-class-Classification"><a href="#Multi-class-Classification" class="headerlink" title="Multi-class Classification"></a>Multi-class Classification</h1><p>To classify data into multiple classes, we let our hypothesis function return a vector of values. Say we wanted to classify our data into one of four categories. We will use the following example to see how this classification is done. This algorithm takes as input an image and classifies it accordingly:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/9Aeo6bGtEea4MxKdJPaTxA_4febc7ec9ac9dd0e4309bd1778171d36_Screenshot-2016-11-23-10.49.05.png?expiry=1496534400000&amp;hmac=quBzbsxK43iVTeZ7Kx4F9mag9nFndH0fvZfE2tYmgqY" alt=""></p>
+<p>We can define our set of resulting classes as y:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/KBpHLXqiEealOA67wFuqoQ_95654ff11df1261d935ab00553d724e5_Screenshot-2016-09-14-10.38.27.png?expiry=1496534400000&amp;hmac=hxkc-NTBC7zD7N55tylMkqLYifgYMNsoHfHtZd-6Hko" alt=""></p>
+<p>Each y(i) represents a different image corresponding to either a car, pedestrian, truck, or motorcycle. The inner layers, each provide us with some new information which leads to our final hypothesis function. The setup looks like:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/VBxpV7GvEeamBAoLccicqA_3e7f67888330b131426ecffd27936f61_Screenshot-2016-11-23-10.59.19.png?expiry=1496534400000&amp;hmac=2yS8aaGzh6rh2E_-1nACFsNla53Kz0bBgHGRYUqmITc" alt=""></p>
+<p>Our resulting hypothesis for one set of inputs may look like:</p>
+<p><img src="http://niceforbear.github.io/images/w4.28.png" alt=""></p>
+<p>In which case our resulting class is the third one down, or hΘ(x)3, which represents the motorcycle.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/01/ml-week4-2-neural-networks/" rel="next" title="CourseraML笔记W4 | Neural Networks Representation">
+                <i class="fa fa-chevron-left"></i> CourseraML笔记W4 | Neural Networks Representation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/02/ml-week3-1-classification-and-representation/" rel="prev" title="CourseraML笔记W3 | Classification">
+                CourseraML笔记W3 | Classification <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg"
+               alt="nicefo72" />
+          <p class="site-author-name" itemprop="name">nicefo72</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Examples-and-intuitions-I"><span class="nav-number">1.</span> <span class="nav-text">Examples and intuitions I</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-linear-classification-example-XOR-XNOR"><span class="nav-number">1.1.</span> <span class="nav-text">Non-linear classification example: XOR / XNOR</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intuitions-II"><span class="nav-number">2.</span> <span class="nav-text">Intuitions II</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Multi-class-Classification"><span class="nav-number">3.</span> <span class="nav-text">Multi-class Classification</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">nicefo72</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

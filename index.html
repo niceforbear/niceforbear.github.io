@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week4-2-neural-networks/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/02/ml-week3-2-logistic-regression-model/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nicefo72">
@@ -270,7 +270,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/01/ml-week4-2-neural-networks/" itemprop="url">CourseraML笔记W4 | Neural Networks Representation</a></h1>
+                <a class="post-title-link" href="/2017/06/02/ml-week3-2-logistic-regression-model/" itemprop="url">CourseraML笔记W3 | Logistic Regression Model</a></h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T14:51:56+08:00">
-                2017-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T17:44:50+08:00">
+                2017-06-02
               </time>
             
 
@@ -319,64 +319,20 @@
       
         
           
-            <h1 id="Model-representation-I"><a href="#Model-representation-I" class="headerlink" title="Model representation I"></a>Model representation I</h1><p>Neuron in the brain.</p>
-<p>Neuron model: Logistic unit 逻辑单元</p>
-<p><img src="http://niceforbear.github.io/images/w4.1.png" alt=""></p>
-<p>input units -&gt; output: h(x) = 1 / 1+ e^-(θ^Tx)</p>
-<p>bias unit: x0</p>
-<p>激励函数： sigmoid(logistic) activation function</p>
-<p>g(z) = 1 / (1+e^-z)</p>
-<p>θ called: 模型的参数 or 权重</p>
-<p><img src="http://niceforbear.github.io/images/w4.2.png" alt=""></p>
-<ul>
-<li>Layer 1: input layer</li>
-<li>Final layer: output layer</li>
-<li>Hidden layer</li>
-</ul>
+            <h1 id="Cost-function"><a href="#Cost-function" class="headerlink" title="Cost function"></a>Cost function</h1><p>Background:</p>
+<p><img src="http://niceforbear.github.io/images/w3.9.png" alt=""></p>
+<p>We cannot use the same cost function that we use for linear regression because the Logistic Function will cause the output to be wavy, causing many local optima. In other words, it will not be a convex function.</p>
+<p>Instead, our cost function for logistic regression looks like:</p>
+<p><img src="http://niceforbear.github.io/images/w3.10.png" alt=""></p>
+<p>When y = 1, we get the following plot for J(θ) vs hθ(x):</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Q9sX8nnxEeamDApmnD43Fw_1cb67ecfac77b134606532f5caf98ee4_Logistic_regression_cost_function_positive_class.png?expiry=1496534400000&amp;hmac=DdDJ2LfAoAvxOwzvdS2qSTxPDrX2yhblaTlb38TNv9Q" alt=""></p>
+<p>Similarly, when y = 0, we get the following plot for J(θ) vs hθ(x):</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/Ut7vvXnxEead-BJkoDOYOw_f719f2858d78dd66d80c5ec0d8e6b3fa_Logistic_regression_cost_function_negative_class.png?expiry=1496534400000&amp;hmac=oaYlU2MadurPqzZdzAIuo41cb8w2ofYc2qYjWtOiwe0" alt=""></p>
+<p><img src="http://niceforbear.github.io/images/w3.11.png" alt=""></p>
+<p>If our correct answer ‘y’ is 0, then the cost function will be 0 if our hypothesis function also outputs 0. If our hypothesis approaches 1, then the cost function will approach infinity.</p>
+<p>If our correct answer ‘y’ is 1, then the cost function will be 0 if our hypothesis function outputs 1. If our hypothesis approaches 0, then the cost function will approach infinity.</p>
+<p>Note that writing the cost function in this way guarantees that J(θ) is convex for logistic regression.</p>
 <hr>
-<p>Let’s examine how we will represent a hypothesis function using neural networks. At a very simple level, neurons are basically computational units that take inputs (dendrites) as electrical inputs (called “spikes”) that are channeled to outputs (axons). In our model, our dendrites are like the input features x1⋯xn, and the output is the result of our hypothesis function. In this model our x0 input node is sometimes called the “bias unit.” It is always equal to 1. In neural networks, we use the same logistic function as in classification, 11+e−θTx, yet we sometimes call it a sigmoid (logistic) activation function. In this situation, our “theta” parameters are sometimes called “weights”.</p>
-<p>Visually, a simplistic representation looks like:</p>
-<p><img src="http://niceforbear.github.io/images/w4.3.png" alt=""></p>
-<p>Our input nodes (layer 1), also known as the “input layer”, go into another node (layer 2), which finally outputs the hypothesis function, known as the “output layer”.</p>
-<p>We can have intermediate layers of nodes between the input and output layers called the “hidden layers.”</p>
-<p>In this example, we label these intermediate or “hidden” layer nodes a20⋯a2n and call them “activation units.”</p>
-<p><img src="http://niceforbear.github.io/images/w4.4.png" alt=""></p>
-<p>If we had one hidden layer, it would look like:</p>
-<p><img src="http://niceforbear.github.io/images/w4.5.png" alt=""></p>
-<p>The values for each of the “activation” nodes is obtained as follows:</p>
-<p><img src="http://niceforbear.github.io/images/w4.6.png" alt=""></p>
-<p>This is saying that we compute our activation nodes by using a 3×4 matrix of parameters. We apply each row of the parameters to our inputs to obtain the value for one activation node. Our hypothesis output is the logistic function applied to the sum of the values of our activation nodes, which have been multiplied by yet another parameter matrix Θ(2) containing the weights for our second layer of nodes.</p>
-<p>Each layer gets its own matrix of weights, Θ(j).</p>
-<p>The dimensions of these matrices of weights is determined as follows:</p>
-<p>If network has sj units in layer j and sj+1 units in layer j+1, then Θ(j) will be of dimension sj+1×(sj+1).<br>The +1 comes from the addition in Θ(j) of the “bias nodes,” x0 and Θ(j)0. In other words the output nodes will not include the bias nodes while the inputs will. The following image summarizes our model representation:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/0rgjYLDeEeajLxLfjQiSjg_0c07c56839f8d6e8d7b0d09acedc88fd_Screenshot-2016-11-22-10.08.51.png?expiry=1496448000000&amp;hmac=mDE3KdUNDBrXr_lewGMnOXi0Ac7s8cZt2j6-1gLxp38" alt=""></p>
-<p>Example: layer 1 has 2 input nodes and layer 2 has 4 activation nodes. Dimension of Θ(1) is going to be 4×3 where sj=2 and sj+1=4, so sj+1×(sj+1)=4×3.</p>
-<hr>
-<h1 id="Model-representation-II"><a href="#Model-representation-II" class="headerlink" title="Model representation II"></a>Model representation II</h1><p>Topic：如何高效计算</p>
-<h4 id="Forward-propagation-Vectorized-implementation"><a href="#Forward-propagation-Vectorized-implementation" class="headerlink" title="Forward propagation: Vectorized implementation"></a>Forward propagation: Vectorized implementation</h4><blockquote>
-<p>我们从输入层的激励开始，然后进行前向传播给隐藏层并计算隐藏层的激励，然后我们继续前向传播，并计算输出层的激励。<br>从这个从输入层到隐藏层再到输出层依次计算激励的过程叫前向传播</p>
-</blockquote>
-<p>通过向量化的方法来计算假设<code>h</code>。</p>
-<h4 id="Neural-Network-Learning-its-own-features"><a href="#Neural-Network-Learning-its-own-features" class="headerlink" title="Neural Network Learning its own features"></a>Neural Network Learning its own features</h4><p>From Hidden layer to Output layer: It\’s a logistic regression.</p>
-<hr>
-<p>To re-iterate, the following is an example of a neural network:</p>
-<p><img src="http://niceforbear.github.io/images/w4.7.png" alt=""></p>
-<p>In this section we’ll do a vectorized implementation of the above functions. We’re going to define a new variable z(j)k that encompasses the parameters inside our g function. In our previous example if we replaced by the variable z for all the parameters we would get:</p>
-<p><img src="http://niceforbear.github.io/images/w4.8.png" alt=""></p>
-<p>In other words, for layer j=2 and node k, the variable z will be:</p>
-<p><img src="http://niceforbear.github.io/images/w4.9.png" alt=""></p>
-<p>The vector representation of x and zj is:</p>
-<p><img src="http://niceforbear.github.io/images/w4.10.png" alt=""></p>
-<p>Setting x=a(1), we can rewrite the equation as:</p>
-<p><img src="http://niceforbear.github.io/images/w4.11.png" alt=""></p>
-<p>We are multiplying our matrix Θ(j−1) with dimensions sj×(n+1) (where sj is the number of our activation nodes) by our vector a(j−1) with height (n+1). This gives us our vector z(j) with height sj. Now we can get a vector of our activation nodes for layer j as follows:</p>
-<p>a(j)=g(z(j))</p>
-<p>Where our function g can be applied element-wise to our vector z(j).</p>
-<p>We can then add a bias unit (equal to 1) to layer j after we have computed a(j). This will be element a(j)0 and will be equal to 1. To compute our final hypothesis, let’s first compute another z vector:</p>
-<p>z(j+1)=Θ(j)a(j)</p>
-<p>We get this final z vector by multiplying the next theta matrix after Θ(j−1) with the values of all the activation nodes we just got. This last theta matrix Θ(j) will have only one row which is multiplied by one column a(j) so that our result is a single number. We then get our final result with:</p>
-<p>hΘ(x)=a(j+1)=g(z(j+1))</p>
-<p>Notice that in this last step, between layer j and layer j+1, we are doing exactly the same thing as we did in logistic regression. Adding all these intermediate layers in neural networks allows us to more elegantly produce interesting and more complex non-linear hypotheses.</p>
 
           
         
@@ -420,7 +376,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week4-1-neural-networks-motivations/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/02/ml-week3-1-classification-and-representation/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nicefo72">
@@ -439,7 +395,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/01/ml-week4-1-neural-networks-motivations/" itemprop="url">CourseraML笔记W4 | 神经网络的动机</a></h1>
+                <a class="post-title-link" href="/2017/06/02/ml-week3-1-classification-and-representation/" itemprop="url">CourseraML笔记W3 | Classification</a></h1>
         
 
         <div class="post-meta">
@@ -451,8 +407,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T14:13:58+08:00">
-                2017-06-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T16:22:37+08:00">
+                2017-06-02
               </time>
             
 
@@ -488,9 +444,33 @@
       
         
           
-            <h1 id="Non-linear-hypotheses"><a href="#Non-linear-hypotheses" class="headerlink" title="Non-linear hypotheses"></a>Non-linear hypotheses</h1><p>线性模型不可能覆盖所有的特征组合情况。</p>
-<p>因此需要非线性分类器：Non-linear Classification</p>
-<h1 id="Neurons-and-the-brain"><a href="#Neurons-and-the-brain" class="headerlink" title="Neurons and the brain"></a>Neurons and the brain</h1>
+            <h1 id="Logistic-Regression-Classification"><a href="#Logistic-Regression-Classification" class="headerlink" title="Logistic Regression - Classification"></a>Logistic Regression - Classification</h1><p>To attempt classification, one method is to use linear regression and map all predictions greater than 0.5 as a 1 and all less than 0.5 as a 0. However, this method doesn’t work well because classification is not actually a linear function.</p>
+<p>The classification problem is just like the regression problem, except that the values y we now want to predict take on only a small number of discrete values. For now, we will focus on the <code>binary classification problem</code> in which y can take on only two values, 0 and 1. (Most of what we say here will also generalize to the multiple-class case.) For instance, if we are trying to build a spam classifier for email, then x(i) may be some features of a piece of email, and y may be 1 if it is a piece of spam mail, and 0 otherwise. Hence, y∈{0,1}. 0 is also called the negative class, and 1 the positive class, and they are sometimes also denoted by the symbols “-” and “+.” Given x(i), the corresponding y(i) is also called the label for the training example.</p>
+<h1 id="Hypothesis-Representation"><a href="#Hypothesis-Representation" class="headerlink" title="Hypothesis Representation"></a>Hypothesis Representation</h1><p>We could approach the classification problem ignoring the fact that y is discrete-valued, and use our old linear regression algorithm to try to predict y given x. However, it is easy to construct examples where this method performs very poorly. Intuitively, it also doesn’t make sense for hθ(x) to take values larger than 1 or smaller than 0 when we know that y ∈ {0, 1}. To fix this, let’s change the form for our hypotheses hθ(x) to satisfy 0≤hθ(x)≤1. This is accomplished by plugging θTx into the Logistic Function.</p>
+<p>Our new form uses the “Sigmoid Function,” also called the “Logistic Function”:</p>
+<p><img src="http://niceforbear.github.io/images/w3.1.png" alt=""></p>
+<p>The following image shows us what the sigmoid function looks like:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/1WFqZHntEead-BJkoDOYOw_2413fbec8ff9fa1f19aaf78265b8a33b_Logistic_function.png?expiry=1496534400000&amp;hmac=dynMg4FzZLPKQKmF6hNxfjWBueISTx0YSHTfKycM9FY" alt=""></p>
+<p>The function g(z), shown here, maps any real number to the (0, 1) interval, making it useful for transforming an arbitrary-valued function into a function better suited for classification.</p>
+<p>hθ(x) will give us the probability that our output is 1. For example, hθ(x)=0.7 gives us a probability of 70% that our output is 1. Our probability that our prediction is 0 is just the complement of our probability that it is 1 (e.g. if probability that it is 1 is 70%, then the probability that it is 0 is 30%).</p>
+<p><img src="http://niceforbear.github.io/images/w3.2.png" alt=""></p>
+<hr>
+<h1 id="Decision-Boundary"><a href="#Decision-Boundary" class="headerlink" title="Decision Boundary"></a>Decision Boundary</h1><p>In order to get our discrete 0 or 1 classification, we can translate the output of the hypothesis function as follows:</p>
+<p><img src="http://niceforbear.github.io/images/w3.3.png" alt=""></p>
+<p>The way our logistic function g behaves is that when its input is greater than or equal to zero, its output is greater than or equal to 0.5:</p>
+<p><img src="http://niceforbear.github.io/images/w3.4.png" alt=""></p>
+<p>Remember.</p>
+<p><img src="http://niceforbear.github.io/images/w3.5.png" alt=""></p>
+<p>So if our input to g is θTX, then that means:</p>
+<p><img src="http://niceforbear.github.io/images/w3.6.png" alt=""></p>
+<p>From these statements we can now say:</p>
+<p><img src="http://niceforbear.github.io/images/w3.7.png" alt=""></p>
+<p>The decision boundary is the line that separates the area where y = 0 and where y = 1. It is created by our hypothesis function.</p>
+<p>Example:</p>
+<p><img src="http://niceforbear.github.io/images/w3.8.png" alt=""></p>
+<p>In this case, our decision boundary is a straight vertical line placed on the graph where x1=5, and everything to the left of that denotes y = 1, while everything to the right denotes y = 0.</p>
+<p>Again, the input to the sigmoid function g(z) (e.g. θTX) doesn’t need to be linear, and could be a function that describes a circle (e.g. z=θ0+θ1x21+θ2x22) or any shape to fit our data.</p>
+
           
         
       
@@ -528,7 +508,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -573,7 +553,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
