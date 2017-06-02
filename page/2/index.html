@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/02/ml-week4-2-neural-networks-applications/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week2-octave/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nicefo72">
@@ -270,7 +270,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/02/ml-week4-2-neural-networks-applications/" itemprop="url">CourseraML笔记W4 | Applications</a></h1>
+                <a class="post-title-link" href="/2017/06/01/ml-week2-octave/" itemprop="url">CourseraML笔记W2 | Octave使用</a></h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-02T15:28:23+08:00">
-                2017-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T10:55:31+08:00">
+                2017-06-01
               </time>
             
 
@@ -319,54 +319,129 @@
       
         
           
-            <h1 id="Examples-and-intuitions-I"><a href="#Examples-and-intuitions-I" class="headerlink" title="Examples and intuitions I"></a>Examples and intuitions I</h1><h2 id="Non-linear-classification-example-XOR-XNOR"><a href="#Non-linear-classification-example-XOR-XNOR" class="headerlink" title="Non-linear classification example: XOR / XNOR"></a>Non-linear classification example: XOR / XNOR</h2><p>Example: </p>
-<p>AND function</p>
-<p>h(x1, x2) = g(-30 + 20<em>x1 + 20</em>x2)</p>
-<ul>
-<li>OR function</li>
-</ul>
-<p>h(x1, x2) = g(-10 + 20<em>x1 + 20</em>x2)</p>
+            <h1 id="Octave"><a href="#Octave" class="headerlink" title="Octave"></a>Octave</h1>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week2-2-computing-parameters-analytically-2-normal-equation-noninvertibility/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nicefo72">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有意思的技术专栏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/ml-week2-2-computing-parameters-analytically-2-normal-equation-noninvertibility/" itemprop="url">CourseraML笔记W2 | 正规方程的不可逆性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T10:42:44+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Normal-Equation-Noninvertibility-正规方程的不可逆性"><a href="#Normal-Equation-Noninvertibility-正规方程的不可逆性" class="headerlink" title="Normal Equation Noninvertibility 正规方程的不可逆性"></a>Normal Equation Noninvertibility 正规方程的不可逆性</h1><p>What if X^T*X is non-invertible?</p>
 <blockquote>
-<p>g: 激励函数</p>
+<p>Octave: pinv(X` <em> X) </em> X` * y</p>
 </blockquote>
 <hr>
-<p>A simple example of applying neural networks is by predicting x1 AND x2, which is the logical ‘and’ operator and is only true if both x1 and x2 are 1.</p>
-<p>The graph of our functions will look like:</p>
-<p><img src="http://niceforbear.github.io/images/w4.21.png" alt=""></p>
-<p>Remember that x0 is our bias variable and is always 1.</p>
-<p>Let’s set our first theta matrix as:</p>
-<p><img src="http://niceforbear.github.io/images/w4.22.png" alt=""></p>
-<p>This will cause the output of our hypothesis to only be positive if both x1 and x2 are 1. In other words:</p>
-<p><img src="http://niceforbear.github.io/images/w4.23.png" alt=""></p>
-<p>So we have constructed one of the fundamental operations in computers by using a small neural network rather than using an actual AND gate. Neural networks can also be used to simulate all the other logical gates. The following is an example of the logical operator ‘OR’, meaning either x1 is true or x2 is true, or both:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/f_ueJLGnEea3qApInhZCFg_a5ff8edc62c9a09900eae075e8502e34_Screenshot-2016-11-23-10.03.48.png?expiry=1496534400000&amp;hmac=UcsfabpseZnm1C2zoQeXSrTdI5k2bi3eeH490qHEn9o" alt=""></p>
-<p>Where g(z) is the following:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/wMOiMrGnEeajLxLfjQiSjg_bbbdad80f5c95068bde7c9134babdd77_Screenshot-2016-11-23-10.07.24.png?expiry=1496534400000&amp;hmac=UPawp-IMPLRVxWxhY4IQD2TJqDtgpdGE_ZWBbKciFoY" alt=""></p>
-<hr>
-<h1 id="Intuitions-II"><a href="#Intuitions-II" class="headerlink" title="Intuitions II"></a>Intuitions II</h1><p>NOT x1:</p>
-<p>h(x) = g(10 - 20*x1)</p>
-<p>x1 XNOR x2:</p>
-<hr>
-<p>The Θ(1) matrices for AND, NOR, and OR are:</p>
-<p><img src="http://niceforbear.github.io/images/w4.24.png" alt=""></p>
-<p>We can combine these to get the XNOR logical operator (which gives 1 if x1 and x2 are both 0 or both 1).</p>
-<p><img src="http://niceforbear.github.io/images/w4.25.png" alt=""></p>
-<p>For the transition between the first and second layer, we’ll use a Θ(1) matrix that combines the values for AND and NOR:</p>
-<p><img src="http://niceforbear.github.io/images/w4.26.png" alt=""></p>
-<p>Let’s write out the values for all our nodes:</p>
-<p><img src="http://niceforbear.github.io/images/w4.27.png" alt=""></p>
-<p>And there we have the XNOR operator using a hidden layer with two nodes! The following summarizes the above algorithm:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/rag_zbGqEeaSmhJaoV5QvA_52c04a987dcb692da8979a2198f3d8d7_Screenshot-2016-11-23-10.28.41.png?expiry=1496534400000&amp;hmac=AGg6o6_gvb4SoFHNEUbUWOBFQnhNERUjMRbA7mGIAmk" alt=""></p>
-<hr>
-<h1 id="Multi-class-Classification"><a href="#Multi-class-Classification" class="headerlink" title="Multi-class Classification"></a>Multi-class Classification</h1><p>To classify data into multiple classes, we let our hypothesis function return a vector of values. Say we wanted to classify our data into one of four categories. We will use the following example to see how this classification is done. This algorithm takes as input an image and classifies it accordingly:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/9Aeo6bGtEea4MxKdJPaTxA_4febc7ec9ac9dd0e4309bd1778171d36_Screenshot-2016-11-23-10.49.05.png?expiry=1496534400000&amp;hmac=quBzbsxK43iVTeZ7Kx4F9mag9nFndH0fvZfE2tYmgqY" alt=""></p>
-<p>We can define our set of resulting classes as y:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/KBpHLXqiEealOA67wFuqoQ_95654ff11df1261d935ab00553d724e5_Screenshot-2016-09-14-10.38.27.png?expiry=1496534400000&amp;hmac=hxkc-NTBC7zD7N55tylMkqLYifgYMNsoHfHtZd-6Hko" alt=""></p>
-<p>Each y(i) represents a different image corresponding to either a car, pedestrian, truck, or motorcycle. The inner layers, each provide us with some new information which leads to our final hypothesis function. The setup looks like:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/VBxpV7GvEeamBAoLccicqA_3e7f67888330b131426ecffd27936f61_Screenshot-2016-11-23-10.59.19.png?expiry=1496534400000&amp;hmac=2yS8aaGzh6rh2E_-1nACFsNla53Kz0bBgHGRYUqmITc" alt=""></p>
-<p>Our resulting hypothesis for one set of inputs may look like:</p>
-<p><img src="http://niceforbear.github.io/images/w4.28.png" alt=""></p>
-<p>In which case our resulting class is the third one down, or hΘ(x)3, which represents the motorcycle.</p>
+<p>When implementing the normal equation in octave we want to use the ‘pinv’ function rather than ‘inv.’ The ‘pinv’ function will give you a value of θ even if XTX is not invertible.</p>
+<p>If XTX is noninvertible, the common causes might be having :</p>
+<ul>
+<li>Redundant features, where two features are very closely related (i.e. they are linearly dependent)</li>
+<li>Too many features (e.g. m ≤ n). In this case, delete some features or use “regularization” (to be explained in a later lesson).</li>
+</ul>
+<p>Solutions to the above problems include deleting a feature that is linearly dependent with another or deleting one or more features when there are too many features.</p>
 
           
         
@@ -410,7 +485,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week4-2-neural-networks/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week2-2-computing-parameters-analytically-1-normal-equation-md/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="nicefo72">
@@ -429,7 +504,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/06/01/ml-week4-2-neural-networks/" itemprop="url">CourseraML笔记W4 | Neural Networks Representation</a></h1>
+                <a class="post-title-link" href="/2017/06/01/ml-week2-2-computing-parameters-analytically-1-normal-equation-md/" itemprop="url">CourseraML笔记W2 | Normal Equation 正规方程</a></h1>
         
 
         <div class="post-meta">
@@ -441,7 +516,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T14:51:56+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T10:04:49+08:00">
                 2017-06-01
               </time>
             
@@ -478,64 +553,382 @@
       
         
           
-            <h1 id="Model-representation-I"><a href="#Model-representation-I" class="headerlink" title="Model representation I"></a>Model representation I</h1><p>Neuron in the brain.</p>
-<p>Neuron model: Logistic unit 逻辑单元</p>
-<p><img src="http://niceforbear.github.io/images/w4.1.png" alt=""></p>
-<p>input units -&gt; output: h(x) = 1 / 1+ e^-(θ^Tx)</p>
-<p>bias unit: x0</p>
-<p>激励函数： sigmoid(logistic) activation function</p>
-<p>g(z) = 1 / (1+e^-z)</p>
-<p>θ called: 模型的参数 or 权重</p>
-<p><img src="http://niceforbear.github.io/images/w4.2.png" alt=""></p>
-<ul>
-<li>Layer 1: input layer</li>
-<li>Final layer: output layer</li>
-<li>Hidden layer</li>
-</ul>
+            <h1 id="Computing-parameters-analytically-Normal-Equation"><a href="#Computing-parameters-analytically-Normal-Equation" class="headerlink" title="Computing parameters analytically - Normal Equation"></a>Computing parameters analytically - Normal Equation</h1><p>某些情况下，使用正规方程法求解θ的最优解。</p>
+<p>Gradient descent gives one way of minimizing J. Let’s discuss a second way of doing so, this time performing the minimization explicitly and without resorting to an iterative algorithm. In the “Normal Equation” method, we will minimize J by explicitly taking its derivatives with respect to the θj ’s, and setting them to zero. This allows us to find the optimum theta without iteration. The normal equation formula is given below:</p>
+<p><img src="http://niceforbear.github.io/images/w2.21.png" alt=""></p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/dykma6dwEea3qApInhZCFg_333df5f11086fee19c4fb81bc34d5125_Screenshot-2016-11-10-10.06.16.png?expiry=1496448000000&amp;hmac=Fv-9A9OjrT0duy4vtF1I6v87JTlUXYs9akHQ8e4fE_A" alt=""></p>
+<p>There is no need to do feature scaling with the normal equation.</p>
+<p>The following is a comparison of gradient descent and the normal equation:</p>
+<p><img src="http://niceforbear.github.io/images/w2.22.png" alt=""></p>
+<p>With the normal equation, computing the inversion has complexity (n3). So if we have a very large number of features, the normal equation will be slow. In practice, when n exceeds 10,000 it might be a good time to go from a normal solution to an iterative process.</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/01/ml-week2-1-multivariate-linear-regression/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nicefo72">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有意思的技术专栏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/01/ml-week2-1-multivariate-linear-regression/" itemprop="url">CourseraML笔记W2 | Multivariate Linear Regression</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-01T08:46:12+08:00">
+                2017-06-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Multiple-features"><a href="#Multiple-features" class="headerlink" title="Multiple features"></a>Multiple features</h1><p>Linear regression with multiple variables is also known as “multivariate linear regression”.</p>
+<p>We now introduce notation for equations where we can have any number of input variables.</p>
+<p><img src="http://niceforbear.github.io/images/w2.1.png" alt=""></p>
+<p>The multivariable form of the hypothesis function accommodating these multiple features is as follows:</p>
+<p>hθ(x)=θ0+θ1x1+θ2x2+θ3x3+⋯+θnxn</p>
+<p>In order to develop intuition about this function, we can think about θ0 as the basic price of a house, θ1 as the price per square meter, θ2 as the price per floor, etc. x1 will be the number of square meters in the house, x2 the number of floors, etc.</p>
+<p>Using the definition of matrix multiplication, our multivariable hypothesis function can be concisely represented as:</p>
+<p><img src="http://niceforbear.github.io/images/w2.2.png" alt=""></p>
+<p>This is a vectorization of our hypothesis function for one training example; see the lessons on vectorization to learn more.</p>
+<p>Remark: Note that for convenience reasons in this course we assume x(i)0=1 for (i∈1,…,m). This allows us to do matrix operations with theta and x. Hence making the two vectors ‘θ’ and x(i) match each other element-wise (that is, have the same number of elements: n+1).]</p>
+<p>The following example shows us the reason behind setting x(i)0=1 :</p>
+<p><img src="http://niceforbear.github.io/images/w2.3.png" alt=""></p>
+<p>As a result, you can calculate the hypothesis as a vector with:</p>
+<p><img src="http://niceforbear.github.io/images/w2.4.png" alt=""></p>
 <hr>
-<p>Let’s examine how we will represent a hypothesis function using neural networks. At a very simple level, neurons are basically computational units that take inputs (dendrites) as electrical inputs (called “spikes”) that are channeled to outputs (axons). In our model, our dendrites are like the input features x1⋯xn, and the output is the result of our hypothesis function. In this model our x0 input node is sometimes called the “bias unit.” It is always equal to 1. In neural networks, we use the same logistic function as in classification, 11+e−θTx, yet we sometimes call it a sigmoid (logistic) activation function. In this situation, our “theta” parameters are sometimes called “weights”.</p>
-<p>Visually, a simplistic representation looks like:</p>
-<p><img src="http://niceforbear.github.io/images/w4.3.png" alt=""></p>
-<p>Our input nodes (layer 1), also known as the “input layer”, go into another node (layer 2), which finally outputs the hypothesis function, known as the “output layer”.</p>
-<p>We can have intermediate layers of nodes between the input and output layers called the “hidden layers.”</p>
-<p>In this example, we label these intermediate or “hidden” layer nodes a20⋯a2n and call them “activation units.”</p>
-<p><img src="http://niceforbear.github.io/images/w4.4.png" alt=""></p>
-<p>If we had one hidden layer, it would look like:</p>
-<p><img src="http://niceforbear.github.io/images/w4.5.png" alt=""></p>
-<p>The values for each of the “activation” nodes is obtained as follows:</p>
-<p><img src="http://niceforbear.github.io/images/w4.6.png" alt=""></p>
-<p>This is saying that we compute our activation nodes by using a 3×4 matrix of parameters. We apply each row of the parameters to our inputs to obtain the value for one activation node. Our hypothesis output is the logistic function applied to the sum of the values of our activation nodes, which have been multiplied by yet another parameter matrix Θ(2) containing the weights for our second layer of nodes.</p>
-<p>Each layer gets its own matrix of weights, Θ(j).</p>
-<p>The dimensions of these matrices of weights is determined as follows:</p>
-<p>If network has sj units in layer j and sj+1 units in layer j+1, then Θ(j) will be of dimension sj+1×(sj+1).<br>The +1 comes from the addition in Θ(j) of the “bias nodes,” x0 and Θ(j)0. In other words the output nodes will not include the bias nodes while the inputs will. The following image summarizes our model representation:</p>
-<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/0rgjYLDeEeajLxLfjQiSjg_0c07c56839f8d6e8d7b0d09acedc88fd_Screenshot-2016-11-22-10.08.51.png?expiry=1496448000000&amp;hmac=mDE3KdUNDBrXr_lewGMnOXi0Ac7s8cZt2j6-1gLxp38" alt=""></p>
-<p>Example: layer 1 has 2 input nodes and layer 2 has 4 activation nodes. Dimension of Θ(1) is going to be 4×3 where sj=2 and sj+1=4, so sj+1×(sj+1)=4×3.</p>
+<h1 id="Gradient-descent-for-multiple-variables"><a href="#Gradient-descent-for-multiple-variables" class="headerlink" title="Gradient descent for multiple variables"></a>Gradient descent for multiple variables</h1><p>The gradient descent equation itself is generally the same form; we just have to repeat it for our ‘n’ features:</p>
+<p><img src="http://niceforbear.github.io/images/w2.5.png" alt=""></p>
+<p>In other words:</p>
+<p><img src="http://niceforbear.github.io/images/w2.6.png" alt=""></p>
+<p>The following image compares gradient descent with one variable to gradient descent with multiple variables:</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/MYm8uqafEeaZoQ7hPZtKqg_c974c2e2953662e9578b38c7b04591ed_Screenshot-2016-11-09-09.07.04.png?expiry=1496448000000&amp;hmac=YAHxL9BOyY3ZRU7pkZ_pZW1IZ2JYF4_00LAV6tIVKCc" alt=""></p>
 <hr>
-<h1 id="Model-representation-II"><a href="#Model-representation-II" class="headerlink" title="Model representation II"></a>Model representation II</h1><p>Topic：如何高效计算</p>
-<h4 id="Forward-propagation-Vectorized-implementation"><a href="#Forward-propagation-Vectorized-implementation" class="headerlink" title="Forward propagation: Vectorized implementation"></a>Forward propagation: Vectorized implementation</h4><blockquote>
-<p>我们从输入层的激励开始，然后进行前向传播给隐藏层并计算隐藏层的激励，然后我们继续前向传播，并计算输出层的激励。<br>从这个从输入层到隐藏层再到输出层依次计算激励的过程叫前向传播</p>
+<h1 id="Gradient-descent-in-practice-I-Feature-Scaling"><a href="#Gradient-descent-in-practice-I-Feature-Scaling" class="headerlink" title="Gradient descent in practice I: Feature Scaling"></a>Gradient descent in practice I: Feature Scaling</h1><p>特征缩放</p>
+<p>Feature Scaling Idea: Make sure features are on a similar scale.</p>
+<blockquote>
+<p>如果两个θ参数的取值差距很大，如2000和5，那么J(θ)的图形为非常扁的椭圆形。<br>通过梯度下降法迭代的过程，可能会曲折迭代很多次。</p>
 </blockquote>
-<p>通过向量化的方法来计算假设<code>h</code>。</p>
-<h4 id="Neural-Network-Learning-its-own-features"><a href="#Neural-Network-Learning-its-own-features" class="headerlink" title="Neural Network Learning its own features"></a>Neural Network Learning its own features</h4><p>From Hidden layer to Output layer: It\’s a logistic regression.</p>
+<p>Get every feature into approximately a -1 &lt;= x &lt;= 1 range.</p>
+<p>Mean normalization: 均值归一化</p>
+<p>Replace xi with xi-ui to make features have approximately zero mean.</p>
 <hr>
-<p>To re-iterate, the following is an example of a neural network:</p>
-<p><img src="http://niceforbear.github.io/images/w4.7.png" alt=""></p>
-<p>In this section we’ll do a vectorized implementation of the above functions. We’re going to define a new variable z(j)k that encompasses the parameters inside our g function. In our previous example if we replaced by the variable z for all the parameters we would get:</p>
-<p><img src="http://niceforbear.github.io/images/w4.8.png" alt=""></p>
-<p>In other words, for layer j=2 and node k, the variable z will be:</p>
-<p><img src="http://niceforbear.github.io/images/w4.9.png" alt=""></p>
-<p>The vector representation of x and zj is:</p>
-<p><img src="http://niceforbear.github.io/images/w4.10.png" alt=""></p>
-<p>Setting x=a(1), we can rewrite the equation as:</p>
-<p><img src="http://niceforbear.github.io/images/w4.11.png" alt=""></p>
-<p>We are multiplying our matrix Θ(j−1) with dimensions sj×(n+1) (where sj is the number of our activation nodes) by our vector a(j−1) with height (n+1). This gives us our vector z(j) with height sj. Now we can get a vector of our activation nodes for layer j as follows:</p>
-<p>a(j)=g(z(j))</p>
-<p>Where our function g can be applied element-wise to our vector z(j).</p>
-<p>We can then add a bias unit (equal to 1) to layer j after we have computed a(j). This will be element a(j)0 and will be equal to 1. To compute our final hypothesis, let’s first compute another z vector:</p>
-<p>z(j+1)=Θ(j)a(j)</p>
-<p>We get this final z vector by multiplying the next theta matrix after Θ(j−1) with the values of all the activation nodes we just got. This last theta matrix Θ(j) will have only one row which is multiplied by one column a(j) so that our result is a single number. We then get our final result with:</p>
-<p>hΘ(x)=a(j+1)=g(z(j+1))</p>
-<p>Notice that in this last step, between layer j and layer j+1, we are doing exactly the same thing as we did in logistic regression. Adding all these intermediate layers in neural networks allows us to more elegantly produce interesting and more complex non-linear hypotheses.</p>
+<p>We can speed up gradient descent by having each of our input values in roughly the same range. This is because θ will descend quickly on small ranges and slowly on large ranges, and so will oscillate inefficiently down to the optimum when the variables are very uneven.</p>
+<p>The way to prevent this is to modify the ranges of our input variables so that they are all roughly the same. Ideally:</p>
+<p>−1 ≤ x(i) ≤ 1</p>
+<p>or</p>
+<p>−0.5 ≤ x(i) ≤ 0.5</p>
+<p>These aren’t exact requirements; we are only trying to speed things up. The goal is to get all input variables into roughly one of these ranges, give or take a few.</p>
+<p>Two techniques to help with this are feature scaling and mean normalization. Feature scaling involves dividing the input values by the range (i.e. the maximum value minus the minimum value) of the input variable, resulting in a new range of just 1. Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in a new average value for the input variable of just zero. To implement both of these techniques, adjust your input values as shown in this formula:</p>
+<p><img src="http://niceforbear.github.io/images/w2.7.png" alt=""></p>
+<p>Where μi is the average of all the values for feature (i) and si is the range of values (max - min), or si is the standard deviation.</p>
+<p>Note that dividing by the range, or dividing by the standard deviation, give different results. The quizzes in this course use range - the programming exercises use standard deviation.</p>
+<p>For example, if xi represents housing prices with a range of 100 to 2000 and a mean value of 1000, then, xi:= (price−1000) / 1900.</p>
+<hr>
+<h1 id="Gradient-descent-in-practice-II-Learning-rate"><a href="#Gradient-descent-in-practice-II-Learning-rate" class="headerlink" title="Gradient descent in practice II: Learning rate"></a>Gradient descent in practice II: Learning rate</h1><p>For Gradient descent algorithm:</p>
+<ul>
+<li>How to make sure gradient descent is working correctly?</li>
+<li>How to choose learning rate α?</li>
+</ul>
+<p>Declare convergence if J decreases by less than 10^-3 in one iteration.</p>
+<p>Gradient descent not working: use smaller α.</p>
+<p>曲线: <code>J(θ) - No. of iterations</code>帮助你判断迭代是否正确。</p>
+<ul>
+<li>If α is too small: slow convergence.</li>
+<li>If α is too large: J may not decrese on every iteration; may not converge.</li>
+</ul>
+<p>To choose α, try 0.001, 0.01, 0.1, 1, …</p>
+<hr>
+<p>Debugging gradient descent. Make a plot with number of iterations on the x-axis. Now plot the cost function, J(θ) over the number of iterations of gradient descent. If J(θ) ever increases, then you probably need to decrease α.</p>
+<p>Automatic convergence test. Declare convergence if J(θ) decreases by less than E in one iteration, where E is some small value such as 10−3. However in practice it’s difficult to choose this threshold value.</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/FEfS3aajEea3qApInhZCFg_6be025f7ad145eb0974b244a7f5b3f59_Screenshot-2016-11-09-09.35.59.png?expiry=1496448000000&amp;hmac=cjX9rosu7HjuX2fJTgiS_P-eyXK9y8mOgMmo3qz1V2c" alt=""></p>
+<p>It has been proven that if learning rate α is sufficiently small, then J(θ) will decrease on every iteration.</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/rC2jGKgvEeamBAoLccicqA_ec9e40a58588382f5b6df60637b69470_Screenshot-2016-11-11-08.55.21.png?expiry=1496448000000&amp;hmac=7-njWCJzb-R0-Ac1DHUABMPY21t6GS5maOjXrMmpas4" alt=""></p>
+<p>To summarize:</p>
+<p>If α is too small: slow convergence.</p>
+<p>If α is too large: ￼may not decrease on every iteration and thus may not converge.</p>
+<hr>
+<h1 id="Features-and-Polynomial-Regression"><a href="#Features-and-Polynomial-Regression" class="headerlink" title="Features and Polynomial Regression"></a>Features and Polynomial Regression</h1><p>选择特征的方法 &amp; 多项式回归。</p>
+<blockquote>
+<p>Demo: h= a + b <em> size + c </em> squr(size)</p>
+</blockquote>
+<hr>
+<p>We can improve our features and the form of our hypothesis function in a couple different ways.</p>
+<p>We can combine multiple features into one. For example, we can combine x1 and x2 into a new feature x3 by taking x1⋅x2.</p>
+<h4 id="Polynomial-Regression"><a href="#Polynomial-Regression" class="headerlink" title="Polynomial Regression"></a>Polynomial Regression</h4><p>Our hypothesis function need not be linear (a straight line) if that does not fit the data well.</p>
+<p>We can change the behavior or curve of our hypothesis function by making it a quadratic, cubic or square root function (or any other form).</p>
+<p>For example, if our hypothesis function is hθ(x)=θ0+θ1x1 then we can create additional features based on x1, to get the quadratic function hθ(x)=θ0+θ1x1+θ2x21 or the cubic function hθ(x)=θ0+θ1x1+θ2x21+θ3x31<br>In the cubic version, we have created new features x2 and x3 where x2=x21 and x3=x31.</p>
+<p>To make it a square root function, we could do: hθ(x)=θ0+θ1x1+θ2x1‾‾√<br>One important thing to keep in mind is, if you choose your features this way then feature scaling becomes very important.</p>
+<p>eg. if x1 has range 1 - 1000 then range of x21 becomes 1 - 1000000 and that of x31 becomes 1 - 1000000000</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/31/ml-week1-3-parameter-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="nicefo72">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://tvax4.sinaimg.cn/crop.0.0.140.140.180/8a5da9ebly8feozkr55mdj20460460sm.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="有意思的技术专栏">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/31/ml-week1-3-parameter-learning/" itemprop="url">CourseraML笔记W1 | Parameter Learning</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-31T16:21:55+08:00">
+                2017-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Gradient-descent"><a href="#Gradient-descent" class="headerlink" title="Gradient descent"></a>Gradient descent</h1><blockquote>
+<p>梯度下降算法：使代价函数J最小化</p>
+</blockquote>
+<p><img src="http://niceforbear.github.io/images/w1.4.1.png" alt=""></p>
+<p>Demo of J:</p>
+<p><img src="http://niceforbear.github.io/images/w1.4.2.png" alt=""></p>
+<p>Gradient descent algorithm:</p>
+<p><img src="http://niceforbear.github.io/images/w1.4.3.png" alt=""></p>
+<blockquote>
+<p>α: learning rate</p>
+<p>simultaneously update θ0 and θ1</p>
+</blockquote>
+<p><img src="http://niceforbear.github.io/images/w1.4.4.png" alt=""></p>
+<hr>
+<p>So we have our hypothesis function and we have a way of measuring how well it fits into the data. Now we need to estimate the parameters in the hypothesis function. That’s where gradient descent comes in.</p>
+<p>Imagine that we graph our hypothesis function based on its fields θ0 and θ1 (actually we are graphing the cost function as a function of the parameter estimates). We are not graphing x and y itself, but the parameter range of our hypothesis function and the cost resulting from selecting a particular set of parameters.</p>
+<p>We put θ0 on the x axis and θ1 on the y axis, with the cost function on the vertical z axis. The points on our graph will be the result of the cost function using our hypothesis with those specific theta parameters. The graph below depicts such a setup.</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/bn9SyaDIEeav5QpTGIv-Pg_0d06dca3d225f3de8b5a4a7e92254153_Screenshot-2016-11-01-23.48.26.png?expiry=1496361600000&amp;hmac=JJvOSBFLTCU4SmIc8GLE80SIAVac2zNfCpiJC7fO2G0" alt=""></p>
+<p>We will know that we have succeeded when our cost function is at the very bottom of the pits in our graph, i.e. when its value is the minimum. The red arrows show the minimum points in the graph.</p>
+<p>The way we do this is by taking the derivative (the tangential line to a function) of our cost function. The slope of the tangent is the derivative at that point and it will give us a direction to move towards. We make steps down the cost function in the direction with the steepest descent. The size of each step is determined by the parameter α, which is called the learning rate.</p>
+<p>For example, the distance between each ‘star’ in the graph above represents a step determined by our parameter α. A smaller α would result in a smaller step and a larger α results in a larger step. The direction in which the step is taken is determined by the partial derivative of J(θ0,θ1). Depending on where one starts on the graph, one could end up at different points. The image above shows us two different starting points that end up in two different places.</p>
+<p>The gradient descent algorithm is:</p>
+<p>repeat until convergence:</p>
+<p><img src="http://niceforbear.github.io/images/w1.4.5.png" alt=""></p>
+<p>where</p>
+<p>j=0,1 represents the feature index number.</p>
+<p>At each iteration j, one should simultaneously update the parameters θ1,θ2,…,θn. Updating a specific parameter prior to calculating another one on the j(th) iteration would yield to a wrong implementation.</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/yr-D1aDMEeai9RKvXdDYag_627e5ab52d5ff941c0fcc741c2b162a0_Screenshot-2016-11-02-00.19.56.png?expiry=1496361600000&amp;hmac=DfO5C5DKn-O4PDTotINgIBYtnFBUw2M730R4xKqxUjs" alt=""></p>
+<hr>
+<h1 id="Gradient-descent-intuition"><a href="#Gradient-descent-intuition" class="headerlink" title="Gradient descent intuition"></a>Gradient descent intuition</h1><p>为何递推公式是减法：根据<code>导数 &amp; 图形结合</code>得到；</p>
+<p>If <code>α</code> is too small, gradient descent can be slow.</p>
+<p>If <code>α</code> is too large, gradient descent can overshoot the minimum. It may fail to converge, or even diverge.</p>
+<blockquote>
+<p>Q: 如果直接把θ1取为局部最小点，那么接下来应该怎么做？</p>
+<p>A: 根据公式，偏导为0，θ1已经不会改变</p>
+</blockquote>
+<p>Gradient descent can converge to a local minimum, even with the learning rate <code>α</code> fixed.</p>
+<blockquote>
+<p>由于随着迭代，偏导数会变小，因此不再需要变化α，即可得到更小的step。</p>
+</blockquote>
+<hr>
+<p>In this video we explored the scenario where we used one parameter θ1 and plotted its cost function to implement a gradient descent. Our formula for a single parameter was :</p>
+<p>Repeat until convergence:</p>
+<p><img src="http://niceforbear.github.io/images/w1.5.1.png" alt=""></p>
+<p>Regardless of the slope’s sign for d/dθ1 J(θ1), θ1 eventually converges to its minimum value. The following graph shows that when the slope is negative, the value of θ1 increases and when it is positive, the value of θ1 decreases.</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/SMSIxKGUEeav5QpTGIv-Pg_ad3404010579ac16068105cfdc8e950a_Screenshot-2016-11-03-00.05.06.png?expiry=1496448000000&amp;hmac=oMqN4zOC7iyKdJHiX2TGPlGMDrIQRhx2ZOOHp0YWz1Y" alt=""></p>
+<p>On a side note, we should adjust our parameter α to ensure that the gradient descent algorithm converges in a reasonable time. Failure to converge or too much time to obtain the minimum value imply that our step size is wrong.</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/UJpiD6GWEeai9RKvXdDYag_3c3ad6625a2a4ec8456f421a2f4daf2e_Screenshot-2016-11-03-00.05.27.png?expiry=1496448000000&amp;hmac=One6qyAurzJc3Cz2DtCkTON-XW28EEw0TMBGV5zCOrc" alt=""></p>
+<p>How does gradient descent converge with a fixed step size α?</p>
+<p>The intuition behind the convergence is that ddθ1J(θ1) approaches 0 as we approach the bottom of our convex function. At the minimum, the derivative will always be 0 and thus we get:</p>
+<p><img src="http://niceforbear.github.io/images/w1.5.2.png" alt=""></p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/RDcJ-KGXEeaVChLw2Vaaug_cb782d34d272321e88f202940c36afe9_Screenshot-2016-11-03-00.06.00.png?expiry=1496448000000&amp;hmac=UQ18rBo9-Iz6xCOZ0DNpAdokITy3iz583jbcrARK5rw" alt=""></p>
+<hr>
+<h1 id="Gradient-descent-for-linear-regression"><a href="#Gradient-descent-for-linear-regression" class="headerlink" title="Gradient descent for linear regression"></a>Gradient descent for linear regression</h1><p><img src="http://niceforbear.github.io/images/w1.5.3.png" alt=""></p>
+<p><img src="http://niceforbear.github.io/images/w1.5.4.png" alt=""></p>
+<p>“Batch” Gradient Descent</p>
+<p>“Batch”: Each step of gradient descent uses all the training examples.</p>
+<blockquote>
+<p>这种弓形函数：convex function: 凸函数</p>
+</blockquote>
+<hr>
+<p>When specifically applied to the case of linear regression, a new form of the gradient descent equation can be derived. We can substitute our actual cost function and our actual hypothesis function and modify the equation to :</p>
+<p><img src="http://niceforbear.github.io/images/w1.5.5.png" alt=""></p>
+<p>where m is the size of the training set, θ0 a constant that will be changing simultaneously with θ1 and xi,yiare values of the given training set (data).</p>
+<p>Note that we have separated out the two cases for θj into separate equations for θ0 and θ1; and that for θ1 we are multiplying xi at the end due to the derivative. The following is a derivation of ∂∂θjJ(θ) for a single example :</p>
+<p><img src="https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/QFpooaaaEea7TQ6MHcgMPA_cc3c276df7991b1072b2afb142a78da1_Screenshot-2016-11-09-08.30.54.png?expiry=1496448000000&amp;hmac=nqeCtvHYVBYqoG_5ItP3iIggeCbKhB7lnOV_sY3HEIo" alt=""></p>
+<p>The point of all this is that if we start with a guess for our hypothesis and then repeatedly apply these gradient descent equations, our hypothesis will become more and more accurate.</p>
+<p>So, this is simply gradient descent on the original cost function J. This method looks at every example in the entire training set on every step, and is called batch gradient descent. Note that, while gradient descent can be susceptible to local minima in general, the optimization problem we have posed here for linear regression has only one global, and no other local, optima; thus gradient descent always converges (assuming the learning rate α is not too large) to the global minimum. Indeed, J is a convex quadratic function. Here is an example of gradient descent as it is run to minimize a quadratic function.</p>
 
           
         
@@ -574,7 +967,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
